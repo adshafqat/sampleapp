@@ -1,0 +1,14 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: nonmesh-route
+  namespace: non-mesh
+spec:
+  host: route-non-mesh.apps.cluster-z9nwc.z9nwc.sandbox439.opentlc.com
+  to:
+    kind: Service
+    name: sampleapp
+    weight: 100
+  port:
+    targetPort: http
+  wildcardPolicy: None
